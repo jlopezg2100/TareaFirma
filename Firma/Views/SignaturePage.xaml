@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:SignaturePad.Forms;assembly=SignaturePad.Forms"
+             x:Class="Firma.Views.SignaturePage">
+    <ScrollView>
+
+        <StackLayout VerticalOptions="CenterAndExpand" Margin="10">
+            <Label Text="Ingrese su firma" FontSize="Title"
+                    HorizontalOptions="CenterAndExpand" Margin="10" />
+            <controls:SignaturePadView x:Name = "Signature"
+                             StrokeColor      = "Blue"
+                             StrokeWidth      = "2"
+                             CaptionText      = "Firma"
+                             CaptionFontSize  = "14"
+                             PromptText       = "X"
+                             PromptFontSize   = "16"
+                             BackgroundColor  = "LightYellow"
+                             HeightRequest="200"
+            />
+            <Label Text="Nombre:" FontAttributes="Bold"/>
+            <Entry x:Name="Nombre" Text=""/>
+            <Label Text="Descripcion:" FontAttributes="Bold"/>
+            <Entry x:Name="Descripcion" Text=""/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <BoxView Grid.Row="0"
+                         Grid.Column="0" />
+                <Button Grid.Row="0"
+                            Grid.Column="0"
+                            Text="Ver Firmas"
+                            VerticalOptions="Center" Clicked="Button_Clicked_1"></Button>
+
+                <BoxView Grid.Row="0"
+                         Grid.Column="1" />
+                <Button Grid.Row="0"
+                            Grid.Column="1"
+                            Text="Guardar firma"
+                            Clicked="Button_Clicked"
+                            VerticalOptions="Center"></Button>
+            </Grid>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
